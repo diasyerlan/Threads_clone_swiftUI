@@ -12,6 +12,8 @@
 		3FCB97E02C53E57900971CD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB97DF2C53E57900971CD9 /* Assets.xcassets */; };
 		3FCB97E32C53E57900971CD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB97E22C53E57900971CD9 /* Preview Assets.xcassets */; };
 		3FCB97F52C53E65A00971CD9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB97F42C53E65A00971CD9 /* LoginView.swift */; };
+		3FCB97F72C54DAC000971CD9 /* TextFieldViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB97F62C54DAC000971CD9 /* TextFieldViewModifier.swift */; };
+		3FCB97F92C54DB8D00971CD9 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB97F82C54DB8D00971CD9 /* RegistrationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		3FCB97DF2C53E57900971CD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FCB97E22C53E57900971CD9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3FCB97F42C53E65A00971CD9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3FCB97F62C54DAC000971CD9 /* TextFieldViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModifier.swift; sourceTree = "<group>"; };
+		3FCB97F82C54DB8D00971CD9 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,7 @@
 				3FCB97EC2C53E59600971CD9 /* Models */,
 				3FCB97E12C53E57900971CD9 /* Preview Content */,
 				3FCB97ED2C53E59A00971CD9 /* Services */,
-				3FCB97EE2C53E59E00971CD9 /* UItilities */,
+				3FCB97EE2C53E59E00971CD9 /* Utils */,
 			);
 			path = ThreadsClone;
 			sourceTree = "<group>";
@@ -111,11 +115,12 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		3FCB97EE2C53E59E00971CD9 /* UItilities */ = {
+		3FCB97EE2C53E59E00971CD9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3FCB97F62C54DAC000971CD9 /* TextFieldViewModifier.swift */,
 			);
-			path = UItilities;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		3FCB97EF2C53E5D000971CD9 /* Authentication */ = {
@@ -138,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				3FCB97F42C53E65A00971CD9 /* LoginView.swift */,
+				3FCB97F82C54DB8D00971CD9 /* RegistrationView.swift */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -213,8 +219,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FCB97F52C53E65A00971CD9 /* LoginView.swift in Sources */,
+				3FCB97F72C54DAC000971CD9 /* TextFieldViewModifier.swift in Sources */,
 				3FCB97DE2C53E57700971CD9 /* ContentView.swift in Sources */,
 				3FCB97DC2C53E57700971CD9 /* ThreadsCloneApp.swift in Sources */,
+				3FCB97F92C54DB8D00971CD9 /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
