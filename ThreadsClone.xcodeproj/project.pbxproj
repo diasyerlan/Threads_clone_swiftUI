@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F209A852C55FC0400C441F5 /* ThreadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F209A842C55FC0400C441F5 /* ThreadCell.swift */; };
 		3FCB97DC2C53E57700971CD9 /* ThreadsCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB97DB2C53E57700971CD9 /* ThreadsCloneApp.swift */; };
 		3FCB97DE2C53E57700971CD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB97DD2C53E57700971CD9 /* ContentView.swift */; };
 		3FCB97E02C53E57900971CD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB97DF2C53E57900971CD9 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F209A842C55FC0400C441F5 /* ThreadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadCell.swift; sourceTree = "<group>"; };
 		3FCB97D82C53E57700971CD9 /* ThreadsClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreadsClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCB97DB2C53E57700971CD9 /* ThreadsCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsCloneApp.swift; sourceTree = "<group>"; };
 		3FCB97DD2C53E57700971CD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				3FCB97FE2C55F76100971CD9 /* FeedView.swift */,
+				3F209A842C55FC0400C441F5 /* ThreadCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				3FCB97FF2C55F76100971CD9 /* FeedView.swift in Sources */,
 				3FCB97F52C53E65A00971CD9 /* LoginView.swift in Sources */,
 				3FCB980C2C55F7F900971CD9 /* ProfileView.swift in Sources */,
+				3F209A852C55FC0400C441F5 /* ThreadCell.swift in Sources */,
 				3FCB97F72C54DAC000971CD9 /* TextFieldViewModifier.swift in Sources */,
 				3FCB97DE2C53E57700971CD9 /* ContentView.swift in Sources */,
 				3FCB97DC2C53E57700971CD9 /* ThreadsCloneApp.swift in Sources */,
