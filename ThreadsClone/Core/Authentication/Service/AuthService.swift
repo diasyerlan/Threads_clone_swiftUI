@@ -7,20 +7,22 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestoreSwift
 
 class AuthService {
     static let shared = AuthService()
-    @Published var usersession: FirebaseAuth.User?
+    @Published var userSession: FirebaseAuth.User?
     
     init() {
-        self.usersession = Auth.auth().currentUser
+        self.userSession = Auth.auth().currentUser
+        print("DEBUG - \(String(describing: self.userSession))")
     }
     
     @MainActor
     func login(email: String, password: String) async throws {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
-            self.usersession = result.user
+            self.userSession = result.user
             print("DEBUG: User logged in with uid - \(result.user.uid)")
         }
         catch {
@@ -29,11 +31,11 @@ class AuthService {
     }
     
     @MainActor
-    func register(email: String, password: String) async throws {
+    func register(email: String, password: String, fullName: String, username: String) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
-            self.usersession = result.user
-            print("DEBUG: User created with uid - \(result.user.uid)")
+            self.userSession = result.user
+            try await uploadUserData(uid: result.user.uid, email: email, fullName: fullName, username: username)
         }
         catch {
             print("DEBUG: Failed to create user - \(error.localizedDescription)")
@@ -42,6 +44,12 @@ class AuthService {
     
     func signOut() {
         try? Auth.auth().signOut()
-        self.usersession = nil
+        self.userSession = nil
+    }
+    
+    func uploadUserData(uid: String, email: String, fullName: String, username: String) async throws {
+        let user = User(id: uid, email: email, fullName: fullName, username: username)
+        guard let userData = try? Firestore.Encoder().encode(user) else { return }
+        try await Firestore.firestore().collection("Users").document(uid).setData(userData)
     }
 }
