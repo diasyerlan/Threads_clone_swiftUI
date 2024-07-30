@@ -18,7 +18,7 @@ class ContentViewModel: ObservableObject {
     }
     
     private func setupSubscribers() {
-        AuthService.shared.$usersession.sink {[weak self] userSession in
+        AuthService.shared.$userSession.sink { [weak self] userSession in
             self?.userSession = userSession
         }.store(in: &cancellabels)
     }
