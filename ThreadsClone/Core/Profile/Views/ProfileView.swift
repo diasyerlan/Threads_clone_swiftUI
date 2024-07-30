@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @StateObject var viewModels = ProfileViewModel()
+    @StateObject var viewModel = ProfileViewModel()
     @State private var selectedFilter = ProfileThreadFilter.threads
     @Namespace var animation
+    var user: User? {
+        viewModel.currentUser
+    }
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
@@ -18,14 +21,16 @@ struct ProfileView: View {
                     HStack {
                         VStack(alignment: .leading, spacing: 12) {
                             VStack(alignment: .leading, spacing: 4) {
-                                Text("Dias Yerlan")
+                                Text(user?.fullName ?? "")
                                     .font(.title2)
                                     .fontWeight(.semibold)
-                                Text("Some Description")
+                                Text(user?.username ?? "")
                                     .font(.subheadline)
                             }
-                            Text("Some text")
-                                .font(.footnote)
+                            if let bio = user?.bio {
+                                Text("Some text")
+                                    .font(.footnote)
+                            }
                             Text("2 followers")
                                 .font(.caption)
                                 .foregroundStyle(.gray)
