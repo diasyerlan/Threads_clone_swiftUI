@@ -8,6 +8,8 @@
 import Foundation
 import Firebase
 import Combine
+import PhotosUI
+import SwiftUI
 
 class CurrentUserProfileViewModel: ObservableObject {
     @Published var currentUser: User?
@@ -18,11 +20,12 @@ class CurrentUserProfileViewModel: ObservableObject {
     }
     
     private func setupSubscribers() {
-        UserService.shared.$currentUser.sink { [weak self] currentUser in
+        UserService.shared.$currentUser
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] currentUser in
             self?.currentUser = currentUser
-            print("DEBUG: \(String(describing: currentUser))")
         }
         .store(in: &cancellables)
     }
-    
+
 }

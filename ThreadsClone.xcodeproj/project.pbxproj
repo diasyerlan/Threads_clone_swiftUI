@@ -53,6 +53,8 @@
 		3FB6692A2C5A0F32000F65A0 /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB669292C5A0F32000F65A0 /* CurrentUserProfileView.swift */; };
 		3FB6692D2C5A10AC000F65A0 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6692C2C5A10AC000F65A0 /* ProfileHeaderView.swift */; };
 		3FB6692F2C5A1151000F65A0 /* UserContentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6692E2C5A1151000F65A0 /* UserContentListView.swift */; };
+		3FB669332C5A3151000F65A0 /* EditProfieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB669322C5A3151000F65A0 /* EditProfieViewModel.swift */; };
+		3FB669352C5A333E000F65A0 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB669342C5A333E000F65A0 /* ImageUploader.swift */; };
 		3FCB97DC2C53E57700971CD9 /* ThreadsCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB97DB2C53E57700971CD9 /* ThreadsCloneApp.swift */; };
 		3FCB97DE2C53E57700971CD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB97DD2C53E57700971CD9 /* ContentView.swift */; };
 		3FCB97E02C53E57900971CD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB97DF2C53E57900971CD9 /* Assets.xcassets */; };
@@ -87,6 +89,8 @@
 		3FB669292C5A0F32000F65A0 /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
 		3FB6692C2C5A10AC000F65A0 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		3FB6692E2C5A1151000F65A0 /* UserContentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentListView.swift; sourceTree = "<group>"; };
+		3FB669322C5A3151000F65A0 /* EditProfieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfieViewModel.swift; sourceTree = "<group>"; };
+		3FB669342C5A333E000F65A0 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		3FCB97D82C53E57700971CD9 /* ThreadsClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreadsClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCB97DB2C53E57700971CD9 /* ThreadsCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsCloneApp.swift; sourceTree = "<group>"; };
 		3FCB97DD2C53E57700971CD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -150,13 +154,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		3F0CDD962C591CF4000A498D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		3F0CDD992C59FE90000A498D /* ExploreViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +183,7 @@
 		3F833A4A2C56951D0033E626 /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
+				3FB669312C5A3140000F65A0 /* ViewModel */,
 				3F833A4B2C56971E0033E626 /* Views */,
 			);
 			path = EditProfile;
@@ -256,6 +254,14 @@
 				3FB6692E2C5A1151000F65A0 /* UserContentListView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		3FB669312C5A3140000F65A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3FB669322C5A3151000F65A0 /* EditProfieViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3FCB97CF2C53E57700971CD9 = {
@@ -341,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				3F0CDD942C591B32000A498D /* UserService.swift */,
+				3FB669342C5A333E000F65A0 /* ImageUploader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -446,7 +453,6 @@
 				3FB669262C5A0ECF000F65A0 /* CurrentUserProfileView */,
 				3F833A4A2C56951D0033E626 /* EditProfile */,
 				3F209A8B2C568B6700C441F5 /* Models */,
-				3F0CDD962C591CF4000A498D /* ViewModel */,
 				3FCB980A2C55F7DE00971CD9 /* Views */,
 			);
 			path = Profile;
@@ -582,6 +588,7 @@
 			files = (
 				3FCB97FF2C55F76100971CD9 /* FeedView.swift in Sources */,
 				3F833A8C2C577E200033E626 /* RegistrationViewModel.swift in Sources */,
+				3FB669332C5A3151000F65A0 /* EditProfieViewModel.swift in Sources */,
 				3FCB97F52C53E65A00971CD9 /* LoginView.swift in Sources */,
 				3F833A8E2C577EE10033E626 /* AuthService.swift in Sources */,
 				3F7275DE2C5A00EE0075C1A9 /* PreviewProvider.swift in Sources */,
@@ -596,6 +603,7 @@
 				3F209A8A2C56075A00C441F5 /* UserCell.swift in Sources */,
 				3F7275DC2C59FF990075C1A9 /* ExploreViewModel.swift in Sources */,
 				3FCB97DE2C53E57700971CD9 /* ContentView.swift in Sources */,
+				3FB669352C5A333E000F65A0 /* ImageUploader.swift in Sources */,
 				3F209A8D2C568BA800C441F5 /* ProfileThreadFilter.swift in Sources */,
 				3F0CDD8F2C580FA8000A498D /* ContentViewModel.swift in Sources */,
 				3F0CDD982C591D07000A498D /* CurrentUserProfileViewModel.swift in Sources */,

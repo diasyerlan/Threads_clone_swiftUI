@@ -12,6 +12,7 @@ struct CurrentUserProfileView: View {
     var user: User? {
         viewModel.currentUser
     }
+    @State private var showEditProfile = false
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
@@ -19,7 +20,7 @@ struct CurrentUserProfileView: View {
                     ProfileHeaderView(user: user)
                     
                     Button {
-                        
+                        showEditProfile.toggle()
                     } label: {
                         Text("Edit Profile")
                             .font(.subheadline)
@@ -46,6 +47,9 @@ struct CurrentUserProfileView: View {
                         Image(systemName: "line.3.horizontal")
                     }
                 }
+            }
+            .sheet(isPresented: $showEditProfile) {
+                EditProfieView()
             }
         }
     }
