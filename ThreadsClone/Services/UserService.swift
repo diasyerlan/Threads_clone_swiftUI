@@ -37,4 +37,12 @@ class UserService: ObservableObject {
     func reset() {
         self.currentUser = nil
     }
+    
+    func updateUserProfileImage(withImageUrl imageUrl: String) async throws {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        try await Firestore.firestore().collection("Users").document(uid).updateData([
+            "profileImageUrl": imageUrl
+        ])
+        self.currentUser?.profilePhoto = imageUrl
+    }
 }

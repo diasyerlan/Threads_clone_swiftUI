@@ -7,11 +7,14 @@
 
 import Foundation
 import SwiftUI
+import PhotosUI
 
 struct EditProfieView: View {
+    @Environment(\.dismiss) var dismiss
     @State private var bio = ""
     @State private var link = ""
     @State private var isProfilePrivate = false
+    @StateObject var viewModel = EditProfieViewModel()
     var body: some View {
         NavigationStack {
             ZStack {
@@ -26,7 +29,17 @@ struct EditProfieView: View {
                             Text("Dias Yerlan")
                         }
                         Spacer()
-                        ProfileImageView()
+                        PhotosPicker(selection: $viewModel.selectedImage) {
+                            if let image = viewModel.profileImage {
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            } else {
+                                ProfileImageView()
+                            }
+                        }
                     }
                     Divider()
                     Text("Bio")
@@ -54,15 +67,22 @@ struct EditProfieView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button {} label: {
+                    Button {
+                        dismiss()
+                    } label: {
                         Text("Cancel")
                             .font(.subheadline)
                             .foregroundStyle(.black)
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button {} label: {
-                        Text("Save")
+                    Button {
+                        Task {
+                            try await viewModel.updateUserData()
+                        }
+                        dismiss()
+                    } label: {
+                        Text("Done")
                             .font(.subheadline)
                             .foregroundStyle(.black)
                     }
