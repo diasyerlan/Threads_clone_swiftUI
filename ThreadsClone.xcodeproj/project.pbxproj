@@ -16,6 +16,8 @@
 		3F209A882C56065600C441F5 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F209A872C56065600C441F5 /* ProfileImageView.swift */; };
 		3F209A8A2C56075A00C441F5 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F209A892C56075A00C441F5 /* UserCell.swift */; };
 		3F209A8D2C568BA800C441F5 /* ProfileThreadFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F209A8C2C568BA800C441F5 /* ProfileThreadFilter.swift */; };
+		3F7275DC2C59FF990075C1A9 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7275DB2C59FF990075C1A9 /* ExploreViewModel.swift */; };
+		3F7275DE2C5A00EE0075C1A9 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7275DD2C5A00EE0075C1A9 /* PreviewProvider.swift */; };
 		3F833A4D2C5697290033E626 /* EditProfieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F833A4C2C5697290033E626 /* EditProfieView.swift */; };
 		3F833A4F2C5774340033E626 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F833A4E2C5774340033E626 /* GoogleService-Info.plist */; };
 		3F833A522C5774DB0033E626 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3F833A512C5774DB0033E626 /* FirebaseAnalytics */; };
@@ -73,6 +75,8 @@
 		3F209A872C56065600C441F5 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		3F209A892C56075A00C441F5 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		3F209A8C2C568BA800C441F5 /* ProfileThreadFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileThreadFilter.swift; sourceTree = "<group>"; };
+		3F7275DB2C59FF990075C1A9 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		3F7275DD2C5A00EE0075C1A9 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		3F833A4C2C5697290033E626 /* EditProfieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfieView.swift; sourceTree = "<group>"; };
 		3F833A4E2C5774340033E626 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F833A8B2C577E200033E626 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -146,6 +150,14 @@
 				3F0CDD972C591D07000A498D /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3F0CDD992C59FE90000A498D /* ExploreViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F7275DB2C59FF990075C1A9 /* ExploreViewModel.swift */,
+			);
+			path = ExploreViewModel;
 			sourceTree = "<group>";
 		};
 		3F209A862C56063D00C441F5 /* Components */ = {
@@ -274,6 +286,7 @@
 		3FCB97EB2C53E59200971CD9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3F7275DD2C5A00EE0075C1A9 /* PreviewProvider.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -357,6 +370,7 @@
 		3FCB98012C55F77800971CD9 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				3F0CDD992C59FE90000A498D /* ExploreViewModel */,
 				3FCB98022C55F77D00971CD9 /* Views */,
 			);
 			path = Explore;
@@ -529,6 +543,7 @@
 				3F833A8C2C577E200033E626 /* RegistrationViewModel.swift in Sources */,
 				3FCB97F52C53E65A00971CD9 /* LoginView.swift in Sources */,
 				3F833A8E2C577EE10033E626 /* AuthService.swift in Sources */,
+				3F7275DE2C5A00EE0075C1A9 /* PreviewProvider.swift in Sources */,
 				3FCB980C2C55F7F900971CD9 /* ProfileView.swift in Sources */,
 				3F0CDD912C581132000A498D /* LoginViewModel.swift in Sources */,
 				3F0CDD952C591B32000A498D /* UserService.swift in Sources */,
@@ -537,6 +552,7 @@
 				3F833A4D2C5697290033E626 /* EditProfieView.swift in Sources */,
 				3FCB97F72C54DAC000971CD9 /* TextFieldViewModifier.swift in Sources */,
 				3F209A8A2C56075A00C441F5 /* UserCell.swift in Sources */,
+				3F7275DC2C59FF990075C1A9 /* ExploreViewModel.swift in Sources */,
 				3FCB97DE2C53E57700971CD9 /* ContentView.swift in Sources */,
 				3F209A8D2C568BA800C441F5 /* ProfileThreadFilter.swift in Sources */,
 				3F0CDD8F2C580FA8000A498D /* ContentViewModel.swift in Sources */,
