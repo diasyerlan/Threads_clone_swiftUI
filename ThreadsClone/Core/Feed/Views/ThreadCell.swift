@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ThreadCell: View {
+    let thread: Thread
     var body: some View {
         VStack {
             HStack(alignment: .top, spacing: 12) {
-                ProfileImageView(user: nil, size: .small)
+                ProfileImageView(user: thread.user, size: .small)
                 
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {
-                        Text("Patrick Bateman")
+                        Text(thread.user?.fullName ?? "")
                             .fontWeight(.semibold)
                         Spacer()
                         
@@ -28,7 +29,7 @@ struct ThreadCell: View {
                         
                     }
                         
-                    Text("You know who I am")
+                    Text(thread.caption)
                     
                     HStack(spacing: 16) {
                         Button {
@@ -65,5 +66,5 @@ struct ThreadCell: View {
 }
 
 #Preview {
-    ThreadCell()
+    ThreadCell(thread: DeveloperPreview.shared.thread)
 }

@@ -25,7 +25,7 @@ struct ProfileView: View {
                         .background(.black)
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
-                UserContentListView()
+                UserContentListView(user: user)
                 
             }
         }
