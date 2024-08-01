@@ -6,16 +6,21 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct CreateThreadView: View {
+    var user: User? {
+        UserService.shared.currentUser
+    }
+    @StateObject var viewModel = CreateThreadViewModel()
     @Environment(\.dismiss) var dismiss
     @State private var caption = ""
     var body: some View {
         NavigationStack {
             HStack(alignment: .top) {
-                ProfileImageView(user: nil, size: .small)
+                ProfileImageView(user: user, size: .small)
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("diasyerlan")
+                    Text(user?.username ?? "")
                         .fontWeight(.semibold)
                     TextField("Start a thread...", text: $caption, axis: .vertical)
                     Spacer()
@@ -47,6 +52,10 @@ struct CreateThreadView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
+                        Task {
+                            try await viewModel.uploadThread(caption: caption)
+                            dismiss()
+                        }
                     } label: {
                         Text("Post")
                     }

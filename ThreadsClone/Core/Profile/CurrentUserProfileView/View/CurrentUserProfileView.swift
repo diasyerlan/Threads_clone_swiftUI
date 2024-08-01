@@ -34,7 +34,9 @@ struct CurrentUserProfileView: View {
                                     .foregroundStyle(.black)
                             }
                     }
-                    UserContentListView()
+                    if let currentUser = user {
+                        UserContentListView(user: currentUser)
+                    }
                     
                 }
             }
