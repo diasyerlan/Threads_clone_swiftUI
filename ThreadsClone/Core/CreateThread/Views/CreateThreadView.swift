@@ -13,7 +13,7 @@ struct CreateThreadView: View {
     var body: some View {
         NavigationStack {
             HStack(alignment: .top) {
-                ProfileImageView()
+                ProfileImageView(user: nil, size: .small)
                 VStack(alignment: .leading, spacing: 4) {
                     Text("diasyerlan")
                         .fontWeight(.semibold)

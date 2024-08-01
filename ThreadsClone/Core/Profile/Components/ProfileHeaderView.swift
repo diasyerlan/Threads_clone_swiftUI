@@ -28,7 +28,7 @@ struct ProfileHeaderView: View {
                     .foregroundStyle(.gray)
             }
             Spacer()
-            ProfileImageView()
+            ProfileImageView(user: user, size: .medium)
         }
     }
 }

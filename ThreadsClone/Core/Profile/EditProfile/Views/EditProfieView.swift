@@ -15,6 +15,7 @@ struct EditProfieView: View {
     @State private var link = ""
     @State private var isProfilePrivate = false
     @StateObject var viewModel = EditProfieViewModel()
+    let user: User
     var body: some View {
         NavigationStack {
             ZStack {
@@ -26,7 +27,7 @@ struct EditProfieView: View {
                         VStack(alignment: .leading) {
                             Text("Name")
                                 .fontWeight(.semibold)
-                            Text("Dias Yerlan")
+                            Text(user.fullName)
                         }
                         Spacer()
                         PhotosPicker(selection: $viewModel.selectedImage) {
@@ -37,7 +38,7 @@ struct EditProfieView: View {
                                     .frame(width: 40, height: 40)
                                     .clipShape(Circle())
                             } else {
-                                ProfileImageView()
+                                ProfileImageView(user: user, size: .small)
                             }
                         }
                     }
@@ -93,5 +94,5 @@ struct EditProfieView: View {
 }
 
 #Preview {
-    EditProfieView()
+    EditProfieView(user: DeveloperPreview.shared.user)
 }
