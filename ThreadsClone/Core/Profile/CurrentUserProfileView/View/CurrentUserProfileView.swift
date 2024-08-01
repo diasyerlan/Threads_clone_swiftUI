@@ -49,7 +49,9 @@ struct CurrentUserProfileView: View {
                 }
             }
             .sheet(isPresented: $showEditProfile) {
-                EditProfieView()
+                if let currentUser = user {
+                    EditProfieView(user: currentUser)
+                }
             }
         }
     }
