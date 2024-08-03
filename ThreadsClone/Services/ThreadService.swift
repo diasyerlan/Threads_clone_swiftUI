@@ -26,4 +26,11 @@ struct ThreadService {
         let threads = snapshot.documents.compactMap({try? $0.data(as: Thread.self)})
         return threads.sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue()})
     }
+    
+    static func updateLikes(thread: Thread, likes: Int) {
+        let threadRef = Firestore.firestore().collection("Threads").document(thread.id)
+        threadRef.updateData([
+            "likes": likes
+        ])
+    }
 }

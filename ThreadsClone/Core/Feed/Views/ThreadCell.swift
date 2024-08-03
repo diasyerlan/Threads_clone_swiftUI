@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct ThreadCell: View {
-    let thread: Thread
+    @StateObject var viewModel: ThreadCellViewModel
+    init(thread: Thread) {
+        self._viewModel = StateObject(wrappedValue: ThreadCellViewModel(thread: thread))
+    }
     var body: some View {
         VStack {
             HStack(alignment: .top, spacing: 12) {
-                ProfileImageView(user: thread.user, size: .small)
+                ProfileImageView(user: viewModel.thread.user, size: .small)
                 
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {
-                        Text(thread.user?.fullName ?? "")
+                        Text(viewModel.thread.user?.fullName ?? "")
                             .fontWeight(.semibold)
                         Spacer()
                         
-                        Text("10 min")
+                        Text(viewModel.thread.timestamp.convertString())
                             .font(.caption)
                             .foregroundStyle(Color(.systemGray3))
                         
@@ -29,13 +32,18 @@ struct ThreadCell: View {
                         
                     }
                         
-                    Text(thread.caption)
+                    Text(viewModel.thread.caption)
                     
                     HStack(spacing: 16) {
                         Button {
-                            
+                            viewModel.updateLikes()
                         } label: {
-                            Image(systemName: "heart")
+                            if viewModel.isLiked {
+                                Image(systemName: "heart.fill")
+                                    .foregroundStyle(.red)
+                            } else {
+                                Image(systemName: "heart")
+                            }
                         }
                         Button {
                             
