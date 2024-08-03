@@ -16,6 +16,9 @@ class UserContentListViewModel: ObservableObject {
         Task {
             try await fetchUserThreads()
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(threadPostedNotificationReceived), name: .threadPosted, object: nil)
+
     }
     
     @MainActor
@@ -27,4 +30,14 @@ class UserContentListViewModel: ObservableObject {
         }
         self.threads = threads
     }
+    
+    @objc private func threadPostedNotificationReceived() {
+            Task {
+                try await fetchUserThreads()
+            }
+        }
+        
+        deinit {
+            NotificationCenter.default.removeObserver(self, name: .threadPosted, object: nil)
+        }
 }

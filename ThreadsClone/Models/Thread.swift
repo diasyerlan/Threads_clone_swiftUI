@@ -21,4 +21,11 @@ struct Thread: Identifiable, Codable {
     
     var user: User?
     
+    mutating func incOrDec(isLiked: Bool) {
+            if isLiked == true {
+                likes -= 1
+            } else {
+                likes += 1
+            }
+        }
 }
